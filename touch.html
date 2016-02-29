@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>MeiJU</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/myiscroll.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/vue.min.js'></script>
+    <script type='text/javascript' src='js/vue-router.min.js'></script>
+    <script type="text/javascript" src="js/iscroll-probe.js"></script>
+    <script type="text/javascript" src='js/scroll5_comp.js'></script>
+    <script type="text/javascript" src='js/myownScroll.js'></script>
+	</head>
+	<body>
+	<div id="containner">hhhhhh<br/>aaa</div>
+	</body>
+	<script>
+	var start_x, start_y, end_x, end_y, move_num;
+    var client_height = $(window).height();
+ 	console.log(client_height)
+    $("#containner").on("touchstart", function(e) {
+        start_x = e.originalEvent.targetTouches[0].clientX;
+        start_y = e.originalEvent.targetTouches[0].clientY;
+        //console.log(start_x);
+        //console.log(start_y);
+        console.log("hh: "+client_height)
+ 
+    });
+    $("#containner").on("touchmove", function(e) {
+        $(this).removeClass("slow_action");
+        end_x = e.originalEvent.targetTouches[0].clientX;
+        end_y = e.originalEvent.targetTouches[0].clientY;
+        move_num = (end_x - start_x).toFixed(2);
+        console.log(move_num);
+        var tf_num = "translateX(" + move_num + "px)";
+        $(this).css("-webkit-transform", tf_num);
+ 
+    });
+    $("#containner").on("touchend", function() {
+        $(this).addClass("slow_action");
+        /*if (move_num < -(client_height / 2)) {
+ 
+            $(this).css({
+                "-webkit-transform": "translateY(-900px)",
+ 
+            });
+ 
+        } else if (move_num > 0) {
+            $(this).css({
+                "-webkit-transform": "translateY(0px)",
+ 
+            });
+        } else {
+            $(this).css({
+                "-webkit-transform": "translateY(0px)",
+ 
+            });
+ 
+        }*/
+        var tf_num = "translateX(" + move_num + "px)";
+        $(this).css("-webkit-transform", tf_num);
+ 
+ 
+ 
+ 
+    });
+		
+	</script>
+</html>

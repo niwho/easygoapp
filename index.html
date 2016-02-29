@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>MeiJU</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/myiscroll.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script type='text/javascript' src='js/vue.min.js'></script>
+    <script type='text/javascript' src='js/vue-router.min.js'></script>
+    <script type="text/javascript" src="js/iscroll-probe.js"></script>
+    <script type="text/javascript" src='js/scroll5_comp.js'></script>
+    <script type="text/javascript" src='js/myownScroll.js'></script>
+    <script type="text/javascript">
+    	function helloworld(){
+			alert("hello world!")
+		}
+   		document.addEventListener('plusready', function(){
+   			console.log("welcome to Html5plus!");
+   		});
+   		
+    </script>
+     <STYLE TYPE="text/css">
+    .text-center,
+    dt,
+    dd {
+        text-align: center;
+    }
+    
+    dt {
+        padding-top: 5px;
+        font-size: 32px;
+    }
+    </STYLE>
+</head>
+<body >
+	<div id='a2pp'>
+        <router-view keep-alive></router-view>
+        <nav class="navbar navbar-default navbar-fixed-bottom" v-show='show'>
+            <div class="container">
+                <div class="col-xs-3 col-md-3 ">
+                    <a v-link="{ path: '/foo' }">
+                        <dl>
+                            <dt><span class="glyphicon glyphicon glyphicon-camera" aria-hidden="true"></span></dt>
+                            <dd>
+                                <h9>留住时光</h9>
+                            </dd>
+                        </dl>
+                    </a>
+                </div>
+                <div class="col-xs-3 col-md-3">
+                    <a v-link="{ path: '/bar' }">
+                        <dl>
+                            <dt><span class="glyphicon glyphicon-map-marker"></span></dt>
+                            <dd>
+                                <h7>爷在这里</h7>
+                            </dd>
+                        </dl>
+                    </a>
+                </div>
+                <div class="col-xs-3 col-md-3">
+                    <a v-link="{path: '/detail/2'}">
+                        <dl>
+                            <dt><span class="glyphicon glyphicon-magnet"></span></dt>
+                            <dd>
+                                <h7>给我过来</h7>
+                            </dd>
+                        </dl>
+                    </a>
+                </div>
+                <div class="col-xs-3 col-md-3">
+                    <a href="index.html">
+                        <dl>
+                            <dt><span class="glyphicon glyphicon-leaf"></span></dt>
+                            <dd>
+                                <h7>还是爷去</h7>
+                            </dd>
+                        </dl>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+<script src="js/my.js"></script>
+</html>
